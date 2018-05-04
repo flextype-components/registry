@@ -12,6 +12,8 @@
 
 namespace Flextype\Component\Registry;
 
+use Flextype\Component\Arr\Arr;
+
 class Registry
 {
     /**
@@ -33,7 +35,7 @@ class Registry
      */
     public static function exists(string $name) : bool
     {
-        return isset(Registry::$registry[(string) $name]);
+        return isset(Arr::get(Registry::$registry, $name));
     }
 
     /**
@@ -49,9 +51,9 @@ class Registry
     {
         // delete item
         if ($value === null) {
-            unset(Registry::$registry[$name]);
+            unset(Arr::get(Registry::$registry, $name));
         } else {
-            Registry::$registry[$name] = $value;
+            Arr::set(Registry::$registry, $name, $value);
 
             return Registry::get($name);
         }
@@ -67,11 +69,11 @@ class Registry
      */
     public static function get(string $name)
     {
-        if ( ! isset(Registry::$registry[$name])) {
+        if ( ! isset(Registry::exists($name))) {
             throw new \RuntimeException('No item "' . $name . '" exists in the registry.');
         }
 
-        return Registry::$registry[$name];
+        return Arr::get(Registry::$registry, $name);
     }
 
 }

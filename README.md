@@ -1,5 +1,5 @@
 # Registry Component
-![version](https://img.shields.io/badge/version-1.0.1-brightgreen.svg?style=flat-square "Version")
+![version](https://img.shields.io/badge/version-1.0.2-brightgreen.svg?style=flat-square "Version")
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/flextype-components/registry/blob/master/LICENSE)
 
 Registry component provides a mechanism for storing data globally in a well managed fashion, helping to prevent global meltdown.

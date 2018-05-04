@@ -1,3 +1,6 @@
+# v1.0.2, 2018-05-05
+* using Array Component
+
 # v1.0.1, 2018-05-05
 * namespace fixes
 
