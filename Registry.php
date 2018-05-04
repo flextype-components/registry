@@ -68,7 +68,7 @@ class Registry
     public static function get(string $name)
     {
         if ( ! isset(Registry::$registry[$name])) {
-            throw new RuntimeException('No item "' . $name . '" exists in the registry.');
+            throw new \RuntimeException('No item "' . $name . '" exists in the registry.');
         }
 
         return Registry::$registry[$name];
