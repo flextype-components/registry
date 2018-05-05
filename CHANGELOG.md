@@ -1,3 +1,6 @@
+# v1.1.0, 2018-05-05
+* general infrastructure changes
+
 # v1.0.2, 2018-05-05
 * using Array Component
 

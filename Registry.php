@@ -35,7 +35,11 @@ class Registry
      */
     public static function exists(string $name) : bool
     {
-        return isset(Arr::get(Registry::$registry, $name));
+        if (Arr::keyExists(Registry::$registry, $name)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -45,18 +49,11 @@ class Registry
      *
      * @param  string          $name  The name of the value to store.
      * @param  mixed $value The value that needs to be stored.
-     * @return mixed
+     * @return void
      */
-    public static function set(string $name, $value = null)
+    public static function set(string $name, $value = null) : void
     {
-        // delete item
-        if ($value === null) {
-            unset(Arr::get(Registry::$registry, $name));
-        } else {
-            Arr::set(Registry::$registry, $name, $value);
-
-            return Registry::get($name);
-        }
+        Arr::set(Registry::$registry, $name, $value);
     }
 
     /**
@@ -65,15 +62,16 @@ class Registry
      * $var = Registry::get('var', 'value');
      *
      * @param  string $name The name of the item to fetch.
+     * @param  mixed  $default Default value
      * @return mixed
      */
-    public static function get(string $name)
+    public static function get(string $name, $default = null)
     {
-        if ( ! isset(Registry::exists($name))) {
+        if ( ! Registry::exists($name)) {
             throw new \RuntimeException('No item "' . $name . '" exists in the registry.');
         }
 
-        return Arr::get(Registry::$registry, $name);
+        return Arr::get(Registry::$registry, $name, $default);
     }
 
 }
