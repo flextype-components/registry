@@ -24,16 +24,26 @@ class Registry
     private static $registry = [];
 
     /**
+     * Get registry array
+     *
+     * @return array
+     */
+    public static function registry() : array
+    {
+        return Registry::$registry;
+    }
+
+    /**
      * Checks if an object with this name is in the registry.
      *
-     * if (Registry::exists('var')) {
+     * if (Registry::has('var')) {
      *     // Do something...
      * }
      *
      * @param  string $name The name of the registry item to check for existence.
      * @return bool
      */
-    public static function exists(string $name) : bool
+    public static function has(string $name) : bool
     {
         if (Arr::keyExists(Registry::$registry, $name)) {
             return true;
@@ -67,7 +77,7 @@ class Registry
      */
     public static function get(string $name, $default = null)
     {
-        if ( ! Registry::exists($name)) {
+        if ( ! Registry::has($name)) {
             throw new \RuntimeException('No item "' . $name . '" exists in the registry.');
         }
 
