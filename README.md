@@ -29,16 +29,18 @@ $registry = new Registry();
 
 | Method | Description |
 |---|---|
-| <a href="#registry_set">`set()`</a> | |
-| <a href="#registry_get">`get()`</a> | |
-| <a href="#registry_has">`has()`</a> | |
-| <a href="#registry_delete">`delete()`</a> | |
-| <a href="#registry_flush">`flush()`</a> | |
-| <a href="#registry_all">`all()`</a> | |
+| <a href="#registry_set">`set()`</a> | Set a value in the registry. |
+| <a href="#registry_get">`get()`</a> | Get item from the registry. |
+| <a href="#registry_has">`has()`</a> | Determine if the registry has a value for the given name. |
+| <a href="#registry_delete">`delete()`</a> |  Delete a value from the registry. |
+| <a href="#registry_flush">`flush()`</a> | Flush all values from the registry. |
+| <a href="#registry_all">`all()`</a> | Get all values in the register. |
 
 <hr>
 
 #### <a name="registry_set"></a> Method: `set()`
+
+Set a value in the registry.
 
 **Example:**
 
@@ -48,6 +50,8 @@ $registry->set('movies.the-thin-red-line.title', 'The Thin Red Line');
 
 #### <a name="registry_get"></a> Method: `get()`
 
+Get item from the registry.
+
 **Example:**
 
 ```php
@@ -55,6 +59,8 @@ $registry->get('movies.the-thin-red-line.title');
 ```
 
 #### <a name="registry_has"></a> Method: `has()`
+
+Determine if the registry has a value for the given name.
 
 **Example:**
 
@@ -74,6 +80,8 @@ $registry->delete('movies.the-thin-red-line.title');
 
 #### <a name="registry_flush"></a> Method: `flush()`
 
+Flush all values from the registry.
+
 **Example:**
 
 ```php
@@ -81,6 +89,8 @@ $registry->flush();
 ```
 
 #### <a name="registry_all"></a> Method: `all()`
+
+Get all values in the register.
 
 **Example:**
 
