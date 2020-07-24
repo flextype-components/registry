@@ -40,8 +40,52 @@ $registry = new Registry();
 
 #### <a name="registry_set"></a> Method: `set()`
 
+**Example:**
+
 ```php
 $registry->set('movies.the-thin-red-line.title', 'The Thin Red Line');
+```
+
+#### <a name="registry_get"></a> Method: `get()`
+
+**Example:**
+
+```php
+$registry->get('movies.the-thin-red-line.title');
+```
+
+#### <a name="registry_has"></a> Method: `has()`
+
+**Example:**
+
+```php
+if ($registry->has('movies.the-thin-red-line.title')) {
+    // do something...
+}
+```
+
+#### <a name="registry_delete"></a> Method: `delete()`
+
+**Example:**
+
+```php
+$registry->delete('movies.the-thin-red-line.title');
+```
+
+#### <a name="registry_flush"></a> Method: `flush()`
+
+**Example:**
+
+```php
+$registry->flush();
+```
+
+#### <a name="registry_all"></a> Method: `all()`
+
+**Example:**
+
+```php
+$dump = $registry->all();
 ```
 
 ### License
